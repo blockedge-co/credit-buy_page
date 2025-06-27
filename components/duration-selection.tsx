@@ -42,7 +42,7 @@ export function DurationSelection({
       <h2 className="text-xl font-semibold text-gray-900 mb-6">Choose Duration</h2>
 
       <Select value={selectedDuration} onValueChange={setSelectedDuration}>
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-full mb-4">
           <SelectValue placeholder="Select a duration" />
         </SelectTrigger>
         <SelectContent>

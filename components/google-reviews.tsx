@@ -1,41 +1,15 @@
-
 "use client"
 
 import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { Star } from "lucide-react"
-
-interface GoogleReview {
-  author: string;
-  rating: number;
-  comment: string;
-  link: string;
-}
 
 interface GoogleReviewsProps {
   isLoaded: boolean;
 }
 
 export function GoogleReviews({ isLoaded }: GoogleReviewsProps) {
-  const reviews: GoogleReview[] = [
-    {
-      author: "John Doe",
-      rating: 5,
-      comment: "Great initiative! Easy to use and transparent.",
-      link: "https://g.page/r/CR3unGfg4PLtEBM/review",
-    },
-    {
-      author: "Jane Smith",
-      rating: 4,
-      comment: "Good platform, helped me offset my travel emissions.",
-      link: "https://g.page/r/CR3unGfg4PLtEBM/review",
-    },
-    {
-      author: "Peter Jones",
-      rating: 5,
-      comment: "Highly recommend! Making a real difference.",
-      link: "https://g.page/r/CR3unGfg4PLtEBM/review",
-    },
-  ]
+  const googleReviewLink = "https://g.page/r/CR3unGfg4PLtEBM/review"
 
   return (
     <Card
@@ -44,33 +18,17 @@ export function GoogleReviews({ isLoaded }: GoogleReviewsProps) {
       }`}
       style={{ animationDelay: "1300ms" }}
     >
-      <h2 className="text-xl font-semibold text-gray-900 mb-6">What Our Users Say</h2>
+      <h2 className="text-xl font-semibold text-gray-900 mb-6">Leave a Review</h2>
 
-      <div className="space-y-6">
-        {reviews.map((review, index) => (
-          <div key={index} className="border-b pb-4 last:border-b-0 last:pb-0">
-            <div className="flex items-center mb-2">
-              <div className="font-semibold text-gray-900 mr-2">{review.author}</div>
-              <div className="flex">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`h-4 w-4 ${i < review.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`}
-                  />
-                ))}
-              </div>
-            </div>
-            <p className="text-sm text-gray-700 mb-2">{review.comment}</p>
-            <a
-              href={review.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-blue-600 hover:underline"
-            >
-              View on Google
-            </a>
-          </div>
-        ))}
+      <div className="text-center">
+        <p className="text-gray-700 mb-4">Help us improve by leaving a review on Google!</p>
+        <Button
+          onClick={() => window.open(googleReviewLink, "_blank")}
+          className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg"
+        >
+          <Star className="h-5 w-5 mr-2 fill-current text-yellow-400" />
+          Write a Google Review
+        </Button>
       </div>
     </Card>
   )

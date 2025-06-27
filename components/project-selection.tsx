@@ -44,7 +44,7 @@ export function ProjectSelection({
       <h2 className="text-xl font-semibold text-gray-900 mb-6">Select Project</h2>
 
       <Select value={selectedProject} onValueChange={setSelectedProject}>
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-full mb-4">
           <SelectValue placeholder="Select a project" />
         </SelectTrigger>
         <SelectContent>
