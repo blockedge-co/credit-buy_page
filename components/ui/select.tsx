@@ -86,11 +86,11 @@ const SelectContent = React.forwardRef<
       <SelectScrollUpButton />
       <SelectPrimitive.Viewport
         className={cn(
-          "p-1",
+          "p-2",
           position === "popper" &&
-            "w-full min-w-[calc(var(--radix-select-trigger-width)+1rem)]"
+            "w-full min-w-[calc(var(--radix-select-trigger-width)+2rem)]"
         )}
-        style={{ maxHeight: 'none' }}
+        style={{ maxHeight: 'none', minHeight: 'auto' }}
       >
         {children}
       </SelectPrimitive.Viewport>
