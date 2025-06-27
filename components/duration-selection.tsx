@@ -48,15 +48,17 @@ export function DurationSelection({
         <SelectContent>
           {durations.map((duration) => (
             <SelectItem key={duration.days} value={duration.days}>
-              <div className="flex items-center justify-between w-full">
-                <div>
-                  <div className="font-semibold text-gray-900">{duration.label}</div>
-                  <div className="text-sm text-gray-500">{duration.co2} kg CO₂ offset</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold text-emerald-700">฿{duration.price}</div>
-                  <div className="text-xs text-gray-500">
-                    ฿{Math.round(duration.price / Number.parseInt(duration.days))}/day
+              <div className="flex flex-col w-full">
+                <div className="flex items-center justify-between w-full mb-1">
+                  <div>
+                    <div className="font-semibold text-gray-900">{duration.label}</div>
+                    <div className="text-sm text-gray-500">{duration.co2} kg CO₂ offset</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-emerald-700">฿{duration.price}</div>
+                    <div className="text-xs text-gray-500">
+                      ฿{Math.round(duration.price / Number.parseInt(duration.days))}/day
+                    </div>
                   </div>
                 </div>
               </div>
