@@ -45,16 +45,23 @@ export function DurationSelection({
         <SelectTrigger className="w-full mb-4">
           <SelectValue placeholder="Select a duration" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="w-full">
           {durations.map((duration) => (
-            <SelectItem key={duration.days} value={duration.days}>
-              <div className="flex flex-col w-full">
-                <div className="flex items-center justify-between w-full mb-1">
-                  <div>
-                    <div className="font-semibold text-gray-900">{duration.label}</div>
+            <SelectItem key={duration.days} value={duration.days} className="py-3">
+              <div className="w-full">
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-gray-900">{duration.label}</span>
+                      {duration.popular && (
+                        <Badge className="bg-emerald-100 text-emerald-700 border-0 text-xs">
+                          Popular
+                        </Badge>
+                      )}
+                    </div>
                     <div className="text-sm text-gray-500">{duration.co2} kg CO₂ offset</div>
                   </div>
-                  <div className="text-right">
+                  <div className="text-right flex-shrink-0">
                     <div className="text-2xl font-bold text-emerald-700">฿{duration.price}</div>
                     <div className="text-xs text-gray-500">
                       ฿{Math.round(duration.price / Number.parseInt(duration.days))}/day

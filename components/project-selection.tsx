@@ -47,25 +47,27 @@ export function ProjectSelection({
         <SelectTrigger className="w-full mb-4">
           <SelectValue placeholder="Select a project" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="w-full">
           {projects.map((project) => (
-            <SelectItem key={project.id} value={project.id}>
-              <div className="flex flex-col w-full">
-                <div className="flex items-center justify-between w-full">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">{project.country}</span>
-                    <div>
-                      <div className="font-medium text-gray-900">{project.name}</div>
+            <SelectItem key={project.id} value={project.id} className="py-4">
+              <div className="w-full space-y-2">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-start gap-3 flex-1">
+                    <span className="text-xl mt-0.5 flex-shrink-0">{project.country}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-medium text-gray-900 truncate">{project.name}</div>
                       <div className="text-sm text-gray-500">{project.location}</div>
                     </div>
                   </div>
-                  {selectedProject === project.id && <CheckCircle className="h-5 w-5 text-emerald-600" />}
+                  {selectedProject === project.id && (
+                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  )}
                 </div>
-                <div className="flex items-center justify-between w-full mt-2">
-                  <Badge variant="outline" className="text-emerald-700 border-emerald-200">
+                <div className="flex items-center justify-between gap-2">
+                  <Badge variant="outline" className="text-emerald-700 border-emerald-200 flex-shrink-0">
                     {project.certification}
                   </Badge>
-                  <span className="text-sm font-medium text-emerald-600">{project.impact}</span>
+                  <span className="text-sm font-medium text-emerald-600 flex-shrink-0">{project.impact}</span>
                 </div>
               </div>
             </SelectItem>
