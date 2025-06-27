@@ -49,12 +49,12 @@ export function ProjectSelection({
         </SelectTrigger>
         <SelectContent className="w-full">
           {projects.map((project) => (
-            <SelectItem key={project.id} value={project.id} className="py-4">
-              <div className="w-full space-y-3">
+            <SelectItem key={project.id} value={project.id} className="py-4 min-h-[5.5rem]">
+              <div className="w-full space-y-3 flex flex-col justify-center min-h-[4.5rem]">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-start gap-3 flex-1">
                     <span className="text-2xl flex-shrink-0">{project.country}</span>
-                    <div className="flex-1">
+                    <div className="flex-1 min-h-[2.5rem]">
                       <div className="font-medium text-gray-900 text-base leading-tight">{project.name}</div>
                       <div className="text-sm text-gray-500 mt-1">{project.location}</div>
                     </div>
