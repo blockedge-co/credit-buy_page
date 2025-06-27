@@ -50,24 +50,24 @@ export function ProjectSelection({
         <SelectContent className="w-full">
           {projects.map((project) => (
             <SelectItem key={project.id} value={project.id} className="py-4">
-              <div className="w-full space-y-2">
-                <div className="flex items-start justify-between gap-2">
+              <div className="w-full space-y-3">
+                <div className="flex items-start justify-between gap-3">
                   <div className="flex items-start gap-3 flex-1">
-                    <span className="text-xl mt-0.5 flex-shrink-0">{project.country}</span>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium text-gray-900 truncate">{project.name}</div>
-                      <div className="text-sm text-gray-500">{project.location}</div>
+                    <span className="text-2xl flex-shrink-0">{project.country}</span>
+                    <div className="flex-1">
+                      <div className="font-medium text-gray-900 text-base leading-tight">{project.name}</div>
+                      <div className="text-sm text-gray-500 mt-1">{project.location}</div>
                     </div>
                   </div>
                   {selectedProject === project.id && (
-                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="h-5 w-5 text-emerald-600 flex-shrink-0" />
                   )}
                 </div>
-                <div className="flex items-center justify-between gap-2">
-                  <Badge variant="outline" className="text-emerald-700 border-emerald-200 flex-shrink-0">
+                <div className="flex items-center justify-between gap-3 flex-wrap">
+                  <Badge variant="outline" className="text-emerald-700 border-emerald-200">
                     {project.certification}
                   </Badge>
-                  <span className="text-sm font-medium text-emerald-600 flex-shrink-0">{project.impact}</span>
+                  <span className="text-sm font-medium text-emerald-600">{project.impact}</span>
                 </div>
               </div>
             </SelectItem>
